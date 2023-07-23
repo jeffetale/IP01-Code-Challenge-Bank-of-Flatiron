@@ -8,7 +8,7 @@ const TransactionSearch = ({searchInput, setSearchInput}) => {
     return (
         <input
         type='text'
-        placeholder='Search Transaction'
+        placeholder='Search Transaction Description'
         value={searchInput}
         onChange={handleChange}
         />

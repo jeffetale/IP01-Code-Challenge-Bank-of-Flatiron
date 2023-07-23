@@ -20,7 +20,7 @@ const App = () => {
   };
 
   const transactionsFilter = transactions.filter((transaction) =>
-    transaction.description.includes(searchInput)
+    transaction.description.toLowerCase().includes(searchInput.toLowerCase())
   );
 
   return (
