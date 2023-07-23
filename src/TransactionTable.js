@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TransactionTable = ({transactions}) => {
+const TransactionTable = ({transactions, onDeleteTransaction}) => {
     return (
         <table>
             <thead>
@@ -18,6 +18,9 @@ const TransactionTable = ({transactions}) => {
                         <td>{transaction.description}</td>
                         <td>{transaction.category}</td>
                         <td>{transaction.amount}</td>
+                        <td>
+                            <button onClick = {() => onDeleteTransaction(transaction.id)}> DELETE </button>
+                        </td>
                     </tr>
                 ))}
             </tbody>

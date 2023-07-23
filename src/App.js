@@ -27,12 +27,17 @@ const App = () => {
     a.category.localeCompare(b.category)
   );
 
+  const deleteTransaction = (id) => {
+    const newTransactions = transactions.filter((transaction) => transaction.id !==id);
+    setTransactions(newTransactions);
+  };
+
   return (
     <>
       <h1>FLAT IRON BANK</h1>
       <TransactionForm addTransaction={addTransaction} />
       <TransactionSearch searchInput={searchInput} setSearchInput={setSearchInput} />
-      <TransactionTable transactions={sortTransactions} />
+      <TransactionTable transactions={sortTransactions} onDeleteTransaction={deleteTransaction} />
     </>
   );
 };
