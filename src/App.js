@@ -23,12 +23,16 @@ const App = () => {
     transaction.description.toLowerCase().includes(searchInput.toLowerCase())
   );
 
+  const sortTransactions = [...transactionsFilter].sort((a, b) => 
+    a.category.localeCompare(b.category)
+  );
+
   return (
     <>
       <h1>FLAT IRON BANK</h1>
       <TransactionForm addTransaction={addTransaction} />
       <TransactionSearch searchInput={searchInput} setSearchInput={setSearchInput} />
-      <TransactionTable transactions={transactionsFilter} />
+      <TransactionTable transactions={sortTransactions} />
     </>
   );
 };
