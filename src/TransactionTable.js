@@ -1,8 +1,9 @@
 import React from 'react';
+import './TransactionTable.css'
 
 const TransactionTable = ({transactions, onDeleteTransaction}) => {
     return (
-        <table>
+        <table className="transaction-table">
             <thead>
                 <tr>
                     <th>Date</th>
