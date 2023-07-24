@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './TransactionForm.css'
 
 const TransactionForm = ({addTransaction}) => {
     const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const TransactionForm = ({addTransaction}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form  className="transaction-form" onSubmit={handleSubmit}>
             <label>
                 Date:
                 <input type = "date" name = "date" value = {formData.date} onChange={handleChange} /> 
